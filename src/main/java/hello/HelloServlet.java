@@ -61,7 +61,26 @@ public class HelloServlet extends HttpServlet {
             		+ "    ");
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
-            out.println("<body><br><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");
+            out.println("<body><br><nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n"
+            		+ "  <a class=\"navbar-brand\" href=\".\\index.html\">ServletJava</a>\n"
+            		+ "  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n"
+            		+ "    <span class=\"navbar-toggler-icon\"></span>\n"
+            		+ "  </button>\n"
+            		+ "      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n"
+            		+ "    <ul class=\"navbar-nav mr-auto\">\n"
+            		+ "      <li class=\"nav-item active\">\n"
+            		+ "        <a class=\"nav-link\" href=\".\\index.html\">Home <span class=\"sr-only\"></span></a>\n"
+            		+ "      </li>\n"
+            		+ "      <li class=\"nav-item dropdown\">\n"
+            		+ "        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n"
+            		+ "          Opções\n"
+            		+ "        </a>\n"
+            		+ "        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n"
+            		+ "          <a class=\"dropdown-item\" href=\".\\alomundo?lang=pt&nome=Fulano\">Método GET</a>\n"
+            		+ "          <a class=\"dropdown-item\" href=\".\\helloform.html\">Método POST(esta página)</a>\n"
+            		+ "        </div>\n"
+            		+ "  </div>\n"
+            		+ "</nav><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");
             out.println("<h1><p class=\"text-danger\">Servlet HelloServlet</p></h1>");
             out.println("<p>" + msg + "</p>");
             out.println("</div></div></div></body>");
@@ -103,7 +122,26 @@ public class HelloServlet extends HttpServlet {
             		+ "    ");
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
-            out.println("<body><br><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");           
+            out.println("<body><nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n"
+            		+ "  <a class=\"navbar-brand\" href=\".\\index.html\">ServletJava</a>\n"
+            		+ "  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n"
+            		+ "    <span class=\"navbar-toggler-icon\"></span>\n"
+            		+ "  </button>\n"
+            		+ "      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n"
+            		+ "    <ul class=\"navbar-nav mr-auto\">\n"
+            		+ "      <li class=\"nav-item active\">\n"
+            		+ "        <a class=\"nav-link\" href=\".\\index.html\">Home <span class=\"sr-only\"></span></a>\n"
+            		+ "      </li>\n"
+            		+ "      <li class=\"nav-item dropdown\">\n"
+            		+ "        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n"
+            		+ "          Opções\n"
+            		+ "        </a>\n"
+            		+ "        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n"
+            		+ "          <a class=\"dropdown-item\" href=\".\\alomundo?lang=pt&nome=Fulano\">Método GET</a>\n"
+            		+ "          <a class=\"dropdown-item\" href=\".\\helloform.html\">Método POST(esta página)</a>\n"
+            		+ "        </div>\n"
+            		+ "  </div>\n"
+            		+ "</nav><br><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");           
             out.println("<h1><p class=\"text-danger\">Servlet HelloServlet</p></h1>");
             out.println("<p>" + msg + "</p>");
             out.println("</div></div></div></body>");
