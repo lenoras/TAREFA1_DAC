@@ -45,11 +45,11 @@ public class HelloServlet extends HttpServlet {
         String lang = request.getParameter("lang");
         String nome = request.getParameter("nome");
         String cumprimentos = this.cumprimentos(lang);
-        
+   
         if(nome=="")
             nome = "Fulano";
         
-        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas.";
+        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas e "+this.date.getMinute()+" minutos.";
 
         
         response.setContentType("text/html;charset=UTF-8");
