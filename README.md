@@ -12,8 +12,8 @@ O cumprimento foi alterado para observar o horário do heroku;
 
 Algumas funcionalidades incluídas:
 
-título na página index;
-botão para o cumprimento;
+Acrescentado o título na página index;
+Criado botão em bootstrap para o cumprimento;
 Após o cumprimento, é informado a hora local.
 
 Link para acesso ao heroku: https://dry-peak-54533.herokuapp.com/
