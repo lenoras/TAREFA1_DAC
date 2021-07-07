@@ -60,10 +60,10 @@ public class HelloServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body><div class=\"container\"><div class=\"ro\">");
             out.println("<h1>Servlet HelloServlet</h1>");
             out.println("<p>" + msg + "</p>");
-            out.println("</body>");
+            out.println("</div></div></body>");
             out.println("</html>");
         }
     }
@@ -101,10 +101,10 @@ public class HelloServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body><div class=\"container\"><div class=\"row\">");           
             out.println("<h1>Servlet HelloServlet</h1>");
             out.println("<p>" + msg + "</p>");
-            out.println("</body>");
+            out.println("</div></div></body>");
             out.println("</html>");
         }
     }
