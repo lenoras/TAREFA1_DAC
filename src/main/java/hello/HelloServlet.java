@@ -117,56 +117,56 @@ public class HelloServlet extends HttpServlet {
     	switch (lang){
 			case "pt":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = " Bom dia!";
+					mensagem = " Bom dia, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Boa tarde!";
-	}			else {
-					mensagem = " Boa noite!";
+					mensagem = " Boa tarde, ";
+	}			else { 
+					mensagem = " Boa noite, ";
 	}
 				break;
 			case "en":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = " Good morning!";
+					mensagem = " Good morning, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Good afternoon!";
+					mensagem = " Good afternoon,";
 	}			else {
-					mensagem = " Good evening!";
+					mensagem = " Good evening, ";
 	}
 			break;
 			case "fr":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = "";
+					mensagem = "Bonjour, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Bonne après-midi!";
+					mensagem = " Bonne après-midi, ";
 	}			else {
-					mensagem = " Bonne soirée!";	
+					mensagem = " Bonne soirée, ";	
 	}
 			break;
 			case "de":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = "Guten Morgen!";
+					mensagem = "Guten Morgen, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " guten Nachmittag!";
+					mensagem = " guten Nachmittag, ";
 	}			else {
-					mensagem = " Guten Abend!";	
+					mensagem = " Guten Abend, ";	
 	}
 			break;
 			case "es":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = "Buenos días!";
+					mensagem = "Buenos días, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Buenas tardes!";
+					mensagem = " Buenas tardes, ";
 	}			else {
-					mensagem = " Buenas noches!";	
+					mensagem = " Buenas noches, ";	
 	}
 			break;
 			case "it":
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
-					mensagem = "Buongiorno!";
+					mensagem = "Buongiorno, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Buon pomeriggio!";
+					mensagem = " Buon pomeriggio, ";
 	}			else {
-					mensagem = " Buonasera!";	
+					mensagem = " Buonasera, ";	
 	}
 			break;
 			default:
