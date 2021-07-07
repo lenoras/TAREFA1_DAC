@@ -6,18 +6,28 @@ and open the template in the editor.
 -->
 <html>
     <head>
-    
-        <title>Demo do Tópico 1</title>
+        <title>Formulário de HelloWorld (usando o HelloServlet.java))</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
-    	<div><h1>Bem vindo ao demo ServletJava!</h1></div>
-    	<p>
-        <div>Funcionalidades disponíveis:</div>
-        <p>
-        <p>HelloServlet.java (Método GET) (<a href=".\alomundo?lang=pt&nome=Fulano">link</a>)</p>
-        <p>Formulário de HelloWorld (usando o HelloServlet.java - Método POST) (<a href=".\helloform.html">link</a>)</p>
+    <div class="container"></div>
+        <div><h1>Formulário de HelloWorld</h1></div>
+           <form action="alomundo" method="post">
+           <br>Idioma: <input type="radio" name="lang" value="pt" checked> Português
+           <input type="radio" name="lang" value="en"> Inglês
+           <input type="radio" name="lang" value="fr"> Francês
+           <input type="radio" name="lang" value="de"> Alemão
+           <input type="radio" name="lang" value="es"> Espanhol
+           <input type="radio" name="lang" value="it"> Italiano<br><br>
+           <div class="form-group">
+   			 <label for="nome">Nome:</label>
+   			 <input type="text" class="form-control" id="nome" placeholder="nome"><br><br>
+ 		   </div>
+           <button type="submit" class="btn btn-light">Cumprimentar</button>
+        </form>
+    </div>
+
     </body>
 </html>
