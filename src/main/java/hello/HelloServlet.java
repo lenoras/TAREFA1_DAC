@@ -8,8 +8,6 @@ package hello;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +21,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/alomundo")
 public class HelloServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	LocalDateTime date = LocalDateTime.now();
    
   /**
@@ -37,39 +39,19 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String msg = "";
-
-        String cumprimentos = this.cumprimentos("lang");
+      
+    	String msg = "";
+        
         String lang = request.getParameter("lang");
         String nome = request.getParameter("nome");
+        String cumprimentos = this.cumprimentos(lang);
         
         if(nome=="")
             nome = "Fulano";
         
-        if(lang==null)
-            lang = "pt";
-        switch(lang){
-            case "pt":
-                msg = "Alô, ";
-                break;
-            case "en":
-                msg = "Hello, ";
-                break;
-            case "fr":
-                msg = "Bonjour, ";
-                break;
-            case "de":
-                msg = "Hallo, ";
-                break;
-            case "es":
-                msg= "¡Hola!, ";
-                break;
-            case "it":
-                msg= "Ciao, ";
-                break;  
-        }
-        msg = msg+nome+"! "+cumprimentos+" São "+this.date.getHour();
+        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas.";
 
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -94,6 +76,39 @@ public class HelloServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+   
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String msg = "";
+        
+        String lang = request.getParameter("lang");
+        String nome = request.getParameter("nome");
+        String cumprimentos = this.cumprimentos(lang);
+        
+        if(lang==null)
+            lang = "pt";
+        
+        if(nome=="")
+            nome = "Fulano";
+        
+        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas.";
+
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet HelloServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet HelloServlet</h1>");
+            out.println("<p>" + msg + "</p>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+    
     public String cumprimentos (String lang) {
     	String mensagem = "";
     	
@@ -122,7 +137,7 @@ public class HelloServlet extends HttpServlet {
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
 					mensagem = "";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
-					mensagem = " Bonne après-mmidi!";
+					mensagem = " Bonne après-midi!";
 	}			else {
 					mensagem = " Bonne soirée!";	
 	}
@@ -161,54 +176,6 @@ public class HelloServlet extends HttpServlet {
 		return mensagem;
     	}
     
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String msg = "";
-        
-        String lang = request.getParameter("lang");
-        String nome = request.getParameter("nome");
-        String cumprimentos = this.cumprimentos(lang);
-        
-        if(lang=="")
-            lang = "pt";
-        switch(lang){
-            case "pt":
-                msg = "Alô, ";
-                break;
-            case "en":
-                msg = "Hello, ";
-                break;
-            case "fr":
-                msg = "Bonjour, ";
-                break;
-            case "es":
-                msg = "Hallo, ";
-                break;
-            case "de":
-                msg = "Hallo, ";
-                break;
-        }
-        
-        if(nome==null)
-            nome = "Fulano";
-        
-        msg = msg+nome+"! "+cumprimentos+" São "+this.date.getHour();
-
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet HelloServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet HelloServlet</h1>");
-            out.println("<p>" + msg + "</p>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
     /**
      * Returns a short description of the servlet.
