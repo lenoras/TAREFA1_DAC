@@ -45,11 +45,12 @@ public class HelloServlet extends HttpServlet {
         String lang = request.getParameter("lang");
         String nome = request.getParameter("nome");
         String cumprimentos = this.cumprimentos(lang);
+        String horas = this.horas(lang);
    
         if(nome=="")
             nome = "Fulano";
         
-        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas e "+this.date.getMinute()+" minutos.";
+        msg = cumprimentos+nome+"! "+horas;
 
         
         response.setContentType("text/html;charset=UTF-8");
@@ -87,14 +88,15 @@ public class HelloServlet extends HttpServlet {
         String lang = request.getParameter("lang");
         String nome = request.getParameter("nome");
         String cumprimentos = this.cumprimentos(lang);
-        
-        if(lang==null)
-            lang = "pt";
+        String horas = this.horas(lang);
         
         if(nome=="")
             nome = "Fulano";
         
-        msg = cumprimentos+nome+"! "+" São "+this.date.getHour()+" horas.";
+        msg = cumprimentos+nome+"! "+horas;
+        
+        if(lang==null)
+            lang = "pt";
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -122,6 +124,7 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
     	switch (lang){
 			case "pt":
+				
 				if(this.date.getHour() >= 6 && this.date.getHour() <=12) {
 					mensagem = " Bom dia, ";
 	}			else if (this.date.getHour() > 12 && this.date.getHour() <=18) {
@@ -175,6 +178,37 @@ public class HelloServlet extends HttpServlet {
 					mensagem = " Buonasera, ";	
 	}
 			break;
+			default:
+				mensagem = "erro";
+				break;
+}
+		return mensagem;
+    	}
+    
+    public String horas (String lang) {
+    	String mensagem = "";
+    	
+        if(lang==null)
+            lang = "pt";
+    	switch (lang){
+			case "pt":
+					mensagem = " São "+this.date.getHour()+" horas e "+this.date.getMinute()+" minutos.";
+				break;
+			case "en":
+				mensagem = " It's "+this.date.getHour()+" hours and "+this.date.getMinute()+" minutes.";
+				break;
+			case "fr":
+				mensagem = " Il es "+this.date.getHour()+" heures et "+this.date.getMinute()+" minutes.";
+				break;
+			case "de":
+				mensagem = " Es sind "+this.date.getHour()+" Stunden und "+this.date.getMinute()+" Minuten.";
+				break;
+			case "es":
+				mensagem = " Son "+this.date.getHour()+" horas y "+this.date.getMinute()+" minutos.";
+				break;
+			case "it":
+				mensagem = " Sono "+this.date.getHour()+" ore e "+this.date.getMinute()+" minuti.";
+				break;
 			default:
 				mensagem = "erro";
 				break;
