@@ -62,7 +62,7 @@ public class HelloServlet extends HttpServlet {
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
             out.println("<body><br><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");
-            out.println("<h1>Servlet HelloServlet</h1>");
+            out.println("<h1><p class=\"text-danger\">Servlet HelloServlet</p></h1>");
             out.println("<p>" + msg + "</p>");
             out.println("</div></div></div></body>");
             out.println("</html>");
@@ -104,7 +104,7 @@ public class HelloServlet extends HttpServlet {
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
             out.println("<body><br><div class=\"container\"><div class=\"row\"><div class=\"col-md-9 ms-md-auto\"><br>");           
-            out.println("<h1>Servlet HelloServlet</h1>");
+            out.println("<h1><p class=\"text-danger\">Servlet HelloServlet</p></h1>");
             out.println("<p>" + msg + "</p>");
             out.println("</div></div></div></body>");
             out.println("</html>");
